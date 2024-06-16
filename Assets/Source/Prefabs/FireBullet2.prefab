@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2377030200104511858}
   - component: {fileID: 8486024838615871802}
   - component: {fileID: 8876200071437303681}
-  - component: {fileID: 222601525783783761}
   - component: {fileID: 660745499050703636}
+  - component: {fileID: 5830505005089139988}
   m_Layer: 0
   m_Name: FireBullet2
   m_TagString: Untagged
@@ -137,18 +137,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &222601525783783761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3696391686271494808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c34439fed61c599af499f90608d302, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &660745499050703636
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -184,6 +172,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.095
+--- !u!114 &5830505005089139988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3696391686271494808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e40091b9b5004143822a2d798aa9f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6975749068356369528
 GameObject:
   m_ObjectHideFlags: 0

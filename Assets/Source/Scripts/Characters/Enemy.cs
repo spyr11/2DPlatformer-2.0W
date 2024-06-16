@@ -3,36 +3,26 @@ using UnityEngine;
 
 public class Enemy : BaseCharacter
 {
-    [SerializeField] private EnemyView _animation;
-    [SerializeField] private PlayerChecker _playerChecker;
-    [SerializeField] private PlayerChecker _meleeAttack;
-    [SerializeField] private PlayerChecker _rangeAttack;
     [SerializeField] private Transform _patrolPoints;
-    [SerializeField] private EnemyData _enemyData;
+    [field: SerializeField] public EnemyView Animation { get; private set; }
+    [field: SerializeField] public PlayerChecker PlayerChecker { get; private set; }
+    [field: SerializeField] public PlayerChecker MeleeAttack { get; private set; }
+    [field: SerializeField] public PlayerChecker RangeAttack { get; private set; }
+    [field: SerializeField] public EnemyData Data { get; private set; }
+
 
     private StateContext _stateContext;
     private Vector2[] _points;
 
     public override StateContext StateContext => _stateContext;
 
-    public EnemyView Animation => _animation;
-    public PlayerChecker PlayerChecker => _playerChecker;
-    public PlayerChecker MeleeAttack => _meleeAttack;
-    public PlayerChecker RangeAttack => _rangeAttack;
-    public EnemyData Data => _enemyData;
-
     protected override void Init()
     {
-        _enemyData.Init();
+        Data.Init();
 
-        _animation.Init();
+        Animation.Init();
 
-        _points = new Vector2[_patrolPoints.childCount];
-
-        for (int i = 0; i < _patrolPoints.childCount; i++)
-        {
-            _points[i] = _patrolPoints.GetChild(i).position;
-        }
+        _points = GetPoints(_patrolPoints);
 
         _stateContext = new StateContext();
     }
@@ -43,15 +33,15 @@ public class Enemy : BaseCharacter
                                     new PatrolState(this,_points),
                                     new ChaseState(this),
                                     new EnemyDamagedState(this),
-                                    new DieState(this,_animation),
+                                    new DieState(this,Animation),
                                     };
 
-        if (_meleeAttack != null)
+        if (MeleeAttack != null)
         {
             states.Add(new EnemyMeleeAttackState(this));
         }
 
-        if (_rangeAttack != null)
+        if (RangeAttack != null)
         {
             states.Add(new EnemyRangeAttackState(this));
         }
@@ -62,4 +52,16 @@ public class Enemy : BaseCharacter
     }
 
     protected override void OnDisabled() { }
+
+    private Vector2[] GetPoints(Transform patrolPoints)
+    {
+        Vector2[] points = new Vector2[patrolPoints.childCount];
+
+        for (int i = 0; i < patrolPoints.childCount; i++)
+        {
+            points[i] = patrolPoints.GetChild(i).position;
+        }
+
+        return points;
+    }
 }

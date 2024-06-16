@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyDamagedState : EnemyState
+public class EnemyDamagedState : EnemyMovementState
 {
     private readonly float _damageDelay;
 

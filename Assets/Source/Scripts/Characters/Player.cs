@@ -3,29 +3,24 @@ using UnityEngine;
 
 public class Player : BaseCharacter
 {
-    [SerializeField] private PlayerData _playerData;
-    [SerializeField] private CharacterView _animation;
-    [SerializeField] private EnemyChecker _enemyChecker;
-    [SerializeField] private GroundChecker _groundChecker;
+    [field: SerializeField] public PlayerData Data { get; private set; }
+    [field: SerializeField] public CharacterView Animation { get; private set; }
+    [field: SerializeField] public GroundChecker GroundChecker { get; private set; }
+    [field: SerializeField] public EnemyChecker EnemyChecker { get; private set; }
 
     private StateContext _stateContext;
     private NewControls _playerInput;
 
+    public override StateContext StateContext => _stateContext;
+
     public bool AttackPressed => _playerInput.Action.Attack.IsPressed();
     public bool JumpPressed => _playerInput.Action.Jump.IsPressed();
 
-    public PlayerData Data => _playerData;
-    public CharacterView Animation => _animation;
-    public EnemyChecker EnemyChecker => _enemyChecker;
-    public GroundChecker GroundChecker => _groundChecker;
-
-    public override StateContext StateContext => _stateContext;
-
     protected override void Init()
     {
-        _playerData.Init();
+        Data.Init();
 
-        _animation.Init();
+        Animation.Init();
 
         _playerInput = new NewControls();
 
@@ -44,7 +39,7 @@ public class Player : BaseCharacter
                                     new TopDownAttackState(this),
                                     new RangeAttackState(this),
                                     new DamagedState(this),
-                                    new DieState(this,_animation),
+                                    new DieState(this,Animation),
                                     };
 
         states.TrimExcess();

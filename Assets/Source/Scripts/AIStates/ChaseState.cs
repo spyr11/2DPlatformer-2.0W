@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChaseState : EnemyState
+public class ChaseState : EnemyMovementState
 {
     private IDamagable _player;
 

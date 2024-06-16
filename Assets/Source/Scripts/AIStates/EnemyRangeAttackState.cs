@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyRangeAttackState : EnemyState
+public class EnemyRangeAttackState : EnemyMovementState
 {
     private readonly BulletSpawner _bulletSpawner;
 

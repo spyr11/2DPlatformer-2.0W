@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ddd2a16d97b987ab68a73980e3f0b8, type: 3}
   m_Name: EnemyTrashlData
   m_EditorClassIdentifier: 
+  <CanFly>k__BackingField: 0
   <MeleeAttackValue>k__BackingField: 10
   <RangeAttackValue>k__BackingField: 0
   <MeleeCooldownTime>k__BackingField: 0.5
-  <RangeCooldownTime>k__BackingField: 0.5
+  <RangeCooldownTime>k__BackingField: 0.1
   <MeleeAttackForce>k__BackingField: 300
-  <Speed>k__BackingField: 1.5
+  <Speed>k__BackingField: 2

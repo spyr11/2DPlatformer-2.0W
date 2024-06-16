@@ -4,9 +4,9 @@ public class DieState : IState
 {
     private readonly BaseCharacter _character;
     private readonly Cooldown _cooldown;
-    private IDieView _anim;
+    private IDieView _animation;
 
-    public DieState(BaseCharacter character, IDieView dieAnim)
+    public DieState(BaseCharacter character, IDieView dieAnimation)
     {
         _character = character;
 
@@ -14,7 +14,7 @@ public class DieState : IState
 
         _cooldown = new Cooldown(dieTime);
 
-        _anim = dieAnim;
+        _animation = dieAnimation;
     }
 
     public void Enter()
@@ -30,9 +30,9 @@ public class DieState : IState
             collider2D.enabled = false;
         }
 
-        _cooldown.Start();
+        _animation.StartDie();
 
-        _anim.StartDie();
+        _cooldown.Start();
     }
 
     public void Exit() { }

@@ -19,7 +19,10 @@ public class EnemyView : MonoBehaviour, IDieView
     public void StopChasing() => _animator.SetBool(IsChasing, false);
 
     public void StartAttackMelee() => _animator.SetTrigger(AttackMelee);
+
     public void StartAttackRange() => _animator.SetTrigger(AttackRange);
+
     public void StartTakeDamage() => _animator.SetTrigger(TakeDamage);
+
     public void StartDie() => _animator.SetTrigger(Die);
 }

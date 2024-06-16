@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMeleeAttackState : EnemyState
+public class EnemyMeleeAttackState : EnemyMovementState
 {
     private IDamagable _player;
 

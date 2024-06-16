@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PatrolState : EnemyState
+public class PatrolState : EnemyMovementState
 {
     private readonly Vector2[] _points;
     private readonly int _startPointIndex;

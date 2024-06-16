@@ -18,11 +18,6 @@ public class RangeAttackState : CombatState
         Player.Animation.Attack();
     }
 
-    public override void Exit()
-    {
-        base.Exit();
-    }
-
     public override void Update()
     {
         base.Update();

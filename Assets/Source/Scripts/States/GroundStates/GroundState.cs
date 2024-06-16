@@ -2,11 +2,6 @@ public class GroundState : MovementState
 {
     public GroundState(Player player) : base(player) { }
 
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
     public override void Update()
     {
         base.Update();

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyState : IState
+public class EnemyMovementState : IState
 {
     protected readonly IStateSwitcher StateSwitcher;
     protected readonly EnemyData Data;
@@ -15,13 +15,17 @@ public class EnemyState : IState
     protected PlayerChecker MeleeAttack { get; private set; }
     protected PlayerChecker RangeAttack { get; private set; }
 
-    public EnemyState(Enemy enemy)
+    public EnemyMovementState(Enemy enemy)
     {
         Enemy = enemy;
-        Data = enemy.Data;
-        StateSwitcher = enemy.StateContext;
-        MeleeAttack = enemy.MeleeAttack;
-        RangeAttack = enemy.RangeAttack;
+        Data = Enemy.Data;
+        StateSwitcher = Enemy.StateContext;
+        MeleeAttack = Enemy.MeleeAttack;
+        RangeAttack = Enemy.RangeAttack;
+
+        float gravityScale = Enemy.Data.CanFly ? 0 : Enemy.Rigidbody2D.gravityScale;
+
+        Enemy.Rigidbody2D.gravityScale = gravityScale;
     }
 
     public virtual void Enter()
@@ -56,10 +60,9 @@ public class EnemyState : IState
     {
         Enemy.Rigidbody2D.transform.rotation = Direction();
 
-        float deltaX = VelocityX;
-        float deltaY = Enemy.Rigidbody2D.gravityScale == 0 ? VelocityY : Enemy.Rigidbody2D.velocity.y;
+        float deltaY = Enemy.Data.CanFly ? VelocityY : Enemy.Rigidbody2D.velocity.y;
 
-        Enemy.Rigidbody2D.velocity = new Vector2(deltaX, deltaY);
+        Enemy.Rigidbody2D.velocity = new Vector2(VelocityX, deltaY);
     }
 
     private Quaternion Direction()

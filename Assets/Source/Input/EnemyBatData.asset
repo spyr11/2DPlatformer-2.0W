@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9ddd2a16d97b987ab68a73980e3f0b8, type: 3}
-  m_Name: EnemyData
+  m_Name: EnemyBatData
   m_EditorClassIdentifier: 
+  <CanFly>k__BackingField: 1
   <MeleeAttackValue>k__BackingField: 5
-  <RangeAttackValue>k__BackingField: 10
+  <RangeAttackValue>k__BackingField: 7
   <MeleeCooldownTime>k__BackingField: 1
   <RangeCooldownTime>k__BackingField: 0.5
-  <MeleeAttackForce>k__BackingField: 300
-  <AttackForceDuration>k__BackingField: 0.2
+  <MeleeAttackForce>k__BackingField: 500
   <Speed>k__BackingField: 3
