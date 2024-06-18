@@ -16,6 +16,7 @@ public class HealthComponent : MonoBehaviour, IChangeable
     private void Awake()
     {
         _character = GetComponent<IDamagable>();
+
         _currentHealth = _maxHealth;
     }
 
@@ -27,10 +28,6 @@ public class HealthComponent : MonoBehaviour, IChangeable
     private void OnDisable()
     {
         _character.Damaged -= Decrease;
-    }
-
-    private void Start()
-    {
     }
 
     public void OnPicked(float value)

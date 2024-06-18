@@ -11,7 +11,7 @@ public class GroundState : MovementState
             StateSwitcher.Switch<JumpState>();
         }
 
-        if (Player.GroundChecker.IsGrounded == false && CanJump == false)
+        if (Player.GroundChecker.IsGrounded == false)
         {
             StateSwitcher.Switch<FallState>();
         }

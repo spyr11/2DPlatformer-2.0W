@@ -9,7 +9,7 @@ public class Player : BaseCharacter
     [field: SerializeField] public EnemyChecker EnemyChecker { get; private set; }
 
     private StateContext _stateContext;
-    private NewControls _playerInput;
+    private PlayerInput _playerInput;
 
     public override StateContext StateContext => _stateContext;
 
@@ -22,7 +22,7 @@ public class Player : BaseCharacter
 
         Animation.Init();
 
-        _playerInput = new NewControls();
+        _playerInput = new PlayerInput();
 
         _stateContext = new StateContext();
     }
