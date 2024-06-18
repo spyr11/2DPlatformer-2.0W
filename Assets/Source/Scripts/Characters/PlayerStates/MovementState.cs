@@ -10,15 +10,12 @@ public class MovementState : IState
     private readonly Quaternion _turnLeft = Quaternion.Euler(0, 180, 0);
 
     public float VelocityX { get; protected set; }
-    public bool CanJump { get; protected set; }
 
     public MovementState(Player player)
     {
         StateSwitcher = player.StateContext;
         Data = player.Data;
         Player = player;
-
-        CanJump = false;
     }
 
     public virtual void Enter()

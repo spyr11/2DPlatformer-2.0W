@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class JumpState : AirState
 {
+    private bool _canJump;
+
     public JumpState(Player player) : base(player) { }
 
     public override void Enter()
     {
         base.Enter();
 
-        CanJump = true;
+        _canJump = true;
 
         Player.Animation.Jump();
     }
@@ -17,7 +19,7 @@ public class JumpState : AirState
     {
         base.Update();
 
-        if (Player.Rigidbody2D.velocity.y < 0 && CanJump == false)
+        if (Player.Rigidbody2D.velocity.y < 0 && _canJump == false)
         {
             StateSwitcher.Switch<FallState>();
         }
@@ -27,11 +29,11 @@ public class JumpState : AirState
     {
         base.FixedUpdate();
 
-        if (CanJump)
+        if (_canJump)
         {
             Jump();
 
-            CanJump = false;
+            _canJump = false;
         }
     }
 
