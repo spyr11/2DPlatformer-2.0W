@@ -56,7 +56,6 @@ public class BulletSpawner : MonoBehaviour
         bullet.hit -= OnHit;
 
         _pool.Release(bullet);
-
     }
 }
 

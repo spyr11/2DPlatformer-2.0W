@@ -1,16 +1,59 @@
+using System;
 using UnityEngine;
 
+[RequireComponent(typeof(HealthComponent))]
+[RequireComponent(typeof(Backpack))]
 public class Picker : MonoBehaviour
 {
-    [SerializeField] private HealthComponent _health;
-    [SerializeField] private Backpack _backpack;
+    private IChangeable _healthComponent;
+    private IChangeable _backpack;
 
-    private void OnTriggerStay2D(Collider2D other)
+    private bool _isPicked;
+
+    private event Action<float> HealPicked;
+    private event Action<float> CoinPicked;
+
+    private void Awake()
     {
-        if (other.TryGetComponent<IItem>(out IItem item))
+        _healthComponent = GetComponent<HealthComponent>();
+        _backpack = GetComponent<Backpack>();
+    }
+
+    private void OnEnable()
+    {
+        HealPicked += _healthComponent.OnPicked;
+        CoinPicked += _backpack.OnPicked;
+    }
+
+    private void OnDisable()
+    {
+        HealPicked -= _healthComponent.OnPicked;
+        CoinPicked -= _backpack.OnPicked;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<Item>(out Item item) && _isPicked == false)
         {
-            item.Overlap(_health);
-            item.Overlap(_backpack);
+            _isPicked = true;
+
+            if (item is Medicine)
+            {
+                HealPicked?.Invoke(item.GetValue());
+            }
+
+            if (item is Coin)
+            {
+                CoinPicked?.Invoke(item.GetValue());
+            }
+
+            item.gameObject.SetActive(false);
+            Destroy(item.gameObject);
+        }
+
+        if (item == null)
+        {
+            _isPicked = false;
         }
     }
 }

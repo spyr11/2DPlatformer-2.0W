@@ -4,7 +4,7 @@ public class PlayerChecker : MonoBehaviour
 {
 
     public IDamagable Player => _player;
-    public bool HasEnemy => _player != null;
+    public bool IsDetected => _player != null;
 
     private IDamagable _player;
 

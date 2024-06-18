@@ -2,7 +2,7 @@
 
 public class EnemyBullet : Bullet
 {
-    protected override bool HasType(IDamagable character)
+    protected override bool IsDamageType(IDamagable character)
     {
         return character is Player;
     }

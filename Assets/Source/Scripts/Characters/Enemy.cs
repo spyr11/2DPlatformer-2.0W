@@ -33,7 +33,7 @@ public class Enemy : BaseCharacter
                                     new PatrolState(this,_points),
                                     new ChaseState(this),
                                     new EnemyDamagedState(this),
-                                    new DieState(this,Animation),
+                                    new DieState(this),
                                     };
 
         if (MeleeAttack != null)

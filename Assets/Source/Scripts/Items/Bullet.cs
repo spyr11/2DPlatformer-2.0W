@@ -18,15 +18,15 @@ public abstract class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.TryGetComponent<IDamagable>(out IDamagable enemy) && HasType(enemy))
+        if (collision.transform.TryGetComponent<IDamagable>(out IDamagable enemy) && IsDamageType(enemy))
         {
             enemy.TakeDamage(_maxDamage);
-
-            hit?.Invoke(this);
         }
+
+        hit?.Invoke(this);
     }
 
-    protected abstract bool HasType(IDamagable character);
+    protected abstract bool IsDamageType(IDamagable character);
 
     private IEnumerator TryDisable(float seconds)
     {

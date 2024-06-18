@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerBullet : Bullet
 {
-    protected override bool HasType(IDamagable character)
+    protected override bool IsDamageType(IDamagable character)
     {
         return character is Enemy;
     }

@@ -1,16 +1,11 @@
 using UnityEngine;
 
-public class Coin : MonoBehaviour, IItem
+public class Coin : Item
 {
     private float _amount = 100;
 
-    public void Overlap(IInteractable target)
+    public override float GetValue()
     {
-        if (target.GetType() == typeof(Backpack))
-        {
-            target.Use(_amount);
-
-            Destroy(gameObject);
-        }
+        return _amount;
     }
 }

@@ -17,3 +17,4 @@ MonoBehaviour:
   <RangeAttackChargeTime>k__BackingField: 0.3
   <JumpForce>k__BackingField: 12
   <Speed>k__BackingField: 5
+  <SpeedOnAir>k__BackingField: 2.5

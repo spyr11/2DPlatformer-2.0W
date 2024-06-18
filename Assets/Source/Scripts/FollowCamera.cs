@@ -13,6 +13,9 @@ class FollowCamera : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         _minBoundX = _mapBounds.bounds.min.x + Camera.main.orthographicSize;
         _maxBoundX = _mapBounds.bounds.max.x - Camera.main.orthographicSize;
     }

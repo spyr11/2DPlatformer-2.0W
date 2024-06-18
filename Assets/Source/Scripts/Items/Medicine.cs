@@ -1,16 +1,11 @@
 using UnityEngine;
 
-public class Medicine : MonoBehaviour, IItem
+public class Medicine : Item
 {
     private float _healValue = 50f;
 
-    public void Overlap(IInteractable target)
+    public override float GetValue()
     {
-        if (target.GetType() == typeof(HealthComponent))
-        {
-            target.Use(_healValue);
-
-            Destroy(gameObject);
-        }
+        return _healValue;
     }
 }

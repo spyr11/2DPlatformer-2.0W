@@ -18,4 +18,4 @@ MonoBehaviour:
   <MeleeCooldownTime>k__BackingField: 0.1
   <RangeCooldownTime>k__BackingField: 0.3
   <MeleeAttackForce>k__BackingField: 0
-  <Speed>k__BackingField: 3
+  <Speed>k__BackingField: 1.5

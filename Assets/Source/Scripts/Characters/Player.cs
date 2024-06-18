@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : BaseCharacter
 {
     [field: SerializeField] public PlayerData Data { get; private set; }
-    [field: SerializeField] public CharacterView Animation { get; private set; }
+    [field: SerializeField] public PlayerView Animation { get; private set; }
     [field: SerializeField] public GroundChecker GroundChecker { get; private set; }
     [field: SerializeField] public EnemyChecker EnemyChecker { get; private set; }
 
@@ -39,7 +39,7 @@ public class Player : BaseCharacter
                                     new TopDownAttackState(this),
                                     new RangeAttackState(this),
                                     new DamagedState(this),
-                                    new DieState(this,Animation),
+                                    new DieState(this),
                                     };
 
         states.TrimExcess();

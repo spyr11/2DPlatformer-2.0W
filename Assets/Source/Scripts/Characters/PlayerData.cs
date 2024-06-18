@@ -9,6 +9,7 @@ public class PlayerData : ScriptableObject
     [field: SerializeField, Range(0, 10)] public float RangeAttackChargeTime { get; private set; }
     [field: SerializeField, Range(0, 50)] public float JumpForce { get; private set; }
     [field: SerializeField, Range(0, 50)] public float Speed { get; private set; }
+    [field: SerializeField, Range(0, 50)] public float SpeedOnAir { get; private set; }
 
     private Cooldown _rangeCooldown;
 

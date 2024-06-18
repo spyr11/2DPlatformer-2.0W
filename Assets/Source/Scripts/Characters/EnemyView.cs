@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyView : MonoBehaviour, IDieView
+public class EnemyView : MonoBehaviour
 {
     public const string IsChasing = nameof(IsChasing);
     public const string TakeDamage = nameof(TakeDamage);
@@ -18,11 +18,11 @@ public class EnemyView : MonoBehaviour, IDieView
     public void StartChasing() => _animator.SetBool(IsChasing, true);
     public void StopChasing() => _animator.SetBool(IsChasing, false);
 
+    public void StartDie() => _animator.SetBool(PlayerAnimatorData.Params.IsDying, true);
+
     public void StartAttackMelee() => _animator.SetTrigger(AttackMelee);
 
     public void StartAttackRange() => _animator.SetTrigger(AttackRange);
 
     public void StartTakeDamage() => _animator.SetTrigger(TakeDamage);
-
-    public void StartDie() => _animator.SetTrigger(Die);
 }

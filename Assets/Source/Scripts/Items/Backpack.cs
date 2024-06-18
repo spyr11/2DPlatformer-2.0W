@@ -1,11 +1,16 @@
+using System;
 using UnityEngine;
 
-public class Backpack : MonoBehaviour, IInteractable
+public class Backpack : MonoBehaviour, IChangeable
 {
-    private int _coinsCount = 0;
+    private float _coinsCount = 0;
 
-    public void Use(float value)
+    public event Action<float> ValueChanged;
+
+    public void OnPicked(float value)
     {
-        _coinsCount += (int)value;
+        _coinsCount += value;
+
+        ValueChanged?.Invoke(_coinsCount);
     }
 }
