@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GroundChecker : MonoBehaviour
+public class GroundDetector : MonoBehaviour
 {
     private BoxCollider2D _boxCollider2D;
     private bool _isGrounded;
@@ -17,7 +17,10 @@ public class GroundChecker : MonoBehaviour
 
         _boxCollider2D = null;
 
-        if (other.TryGetComponent(out Platform platform) && platform.TryGetComponent(out _boxCollider2D)) { }
+        if (other.TryGetComponent(out Platform platform))
+        {
+            _boxCollider2D = platform.GetComponent<BoxCollider2D>();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)

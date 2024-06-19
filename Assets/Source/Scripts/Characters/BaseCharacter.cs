@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(HealthComponent))]
+[RequireComponent(typeof(Rigidbody2D), typeof(HealthComponent))]
 public abstract class BaseCharacter : MonoBehaviour, IDamagable
 {
     [field: SerializeField] public BulletSpawner BulletSpawner { get; private set; }

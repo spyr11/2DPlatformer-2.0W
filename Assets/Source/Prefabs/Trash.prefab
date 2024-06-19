@@ -1,52 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2491538732079716127
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5785264490899405228}
-  - component: {fileID: 2367673583449883775}
-  m_Layer: 9
-  m_Name: ShootPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5785264490899405228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2491538732079716127}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.34, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4711336319975084058}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2367673583449883775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2491538732079716127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919e87472d79aa5f29277b3a9f831ed8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 0}
-  _shootForce: 5
-  _lifeTime: 2
 --- !u!1 &2899985559990383660
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1692771366532578148}
   - component: {fileID: 777999798752844688}
-  - component: {fileID: 2273280591323521897}
+  - component: {fileID: 1600794405582918321}
   m_Layer: 0
-  m_Name: MeleeChecker
+  m_Name: MeleeFinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +78,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21462345, y: 1.2024312}
   m_EdgeRadius: 0
---- !u!114 &2273280591323521897
+--- !u!114 &1600794405582918321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2899985559990383660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08476af079c08ca4c8f4812ce42cc2bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 177e82fa8681e444ca3d59875b5df703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3251183925926748370
@@ -266,9 +219,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8143569011071748259}
   - component: {fileID: 7355240478005182388}
-  - component: {fileID: 6221926831043557764}
+  - component: {fileID: 1789451804681758633}
   m_Layer: 0
-  m_Name: ChaseChecker
+  m_Name: ChaseFinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +287,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.5083075, y: 2.2440934}
   m_EdgeRadius: 0
---- !u!114 &6221926831043557764
+--- !u!114 &1789451804681758633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -343,7 +296,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6451540425188820389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08476af079c08ca4c8f4812ce42cc2bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 177e82fa8681e444ca3d59875b5df703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7865903384937479070
@@ -382,7 +335,6 @@ Transform:
   - {fileID: 6716591973251093800}
   - {fileID: 8143569011071748259}
   - {fileID: 1692771366532578148}
-  - {fileID: 5785264490899405228}
   m_Father: {fileID: 3318276928200468330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &9144388288820498874
@@ -424,11 +376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965ec44a7d4dba6b29685210009342e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpawner: {fileID: 2367673583449883775}
+  <BulletSpawner>k__BackingField: {fileID: 0}
   _patrolPoints: {fileID: 8850333766489925913}
   <Animation>k__BackingField: {fileID: 3689121082711744936}
-  <PlayerChecker>k__BackingField: {fileID: 6221926831043557764}
-  <MeleeAttack>k__BackingField: {fileID: 2273280591323521897}
+  <PlayerFinder>k__BackingField: {fileID: 1789451804681758633}
+  <MeleeAttack>k__BackingField: {fileID: 1600794405582918321}
   <RangeAttack>k__BackingField: {fileID: 0}
   <Data>k__BackingField: {fileID: 11400000, guid: 5d7443489a9acc74dada0877c46ea867, type: 2}
 --- !u!114 &4621099275731732081

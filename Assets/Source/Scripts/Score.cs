@@ -4,7 +4,7 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     [SerializeField] private Backpack _backpack;
-    [SerializeField] private TextMeshProUGUI _textMesh;
+    [SerializeField] private TextMeshProUGUI _textScore;
 
     private void OnEnable()
     {
@@ -18,6 +18,6 @@ public class Score : MonoBehaviour
 
     private void AddScore(float value)
     {
-        _textMesh.text = "Score: " + value.ToString();
+        _textScore.text = value.ToString();
     }
 }

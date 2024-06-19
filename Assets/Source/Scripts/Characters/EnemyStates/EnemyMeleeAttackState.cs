@@ -11,7 +11,7 @@ public class EnemyMeleeAttackState : EnemyMovementState
 
         Data.MeleeCooldown.Start();
 
-        IDamagable player = Enemy.PlayerChecker.Player;
+        IDamagable player = Enemy.PlayerFinder.Player;
 
         player.TakeDamage(Data.MeleeAttackValue);
 

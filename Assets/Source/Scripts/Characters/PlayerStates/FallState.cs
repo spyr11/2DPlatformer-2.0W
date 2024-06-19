@@ -20,7 +20,7 @@ public class FallState : AirState
     {
         base.Update();
 
-        if (Player.GroundChecker.IsGrounded == false && Player.EnemyChecker.HasEnemy)
+        if (Player.GroundChecker.IsGrounded == false && Player.EnemyFinder.HasEnemy)
         {
             StateSwitcher.Switch<TopDownAttackState>();
         }

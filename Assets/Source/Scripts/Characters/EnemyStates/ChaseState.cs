@@ -21,7 +21,7 @@ public class ChaseState : EnemyMovementState
         _speedX = Data.Speed * _multiplier;
         _speedY = Data.Speed * _multiplier;
 
-        _player = Enemy.PlayerChecker.Player;
+        _player = Enemy.PlayerFinder.Player;
 
         Enemy.Animation.StartChasing();
     }
@@ -47,7 +47,7 @@ public class ChaseState : EnemyMovementState
             StateSwitcher.Switch<EnemyRangeAttackState>();
         }
 
-        if (Enemy.PlayerChecker.IsDetected)
+        if (Enemy.PlayerFinder.IsDetected)
         {
             Vector2 direction = (_player.GetPosition() - Enemy.Rigidbody2D.transform.position);
 

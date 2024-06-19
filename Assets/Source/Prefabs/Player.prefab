@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6920332917093680814}
   - component: {fileID: 8556584358417979275}
-  - component: {fileID: 665534796681328992}
+  - component: {fileID: 4750902469593696884}
   m_Layer: 9
-  m_Name: EnemyChecker
+  m_Name: EnemyFinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.021293998}
   m_EdgeRadius: 0
---- !u!114 &665534796681328992
+--- !u!114 &4750902469593696884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2979032621631298811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 342babf0034031c0788e909320e11cea, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cd125b950af1a840a1777abb0882a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3350805625045511048
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 632369180892923589}
   - component: {fileID: 5167273298527063909}
-  - component: {fileID: 3848664483506043570}
+  - component: {fileID: 8295300541020779441}
   m_Layer: 9
   m_Name: FootPoint
   m_TagString: Untagged
@@ -166,9 +166,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.57, y: 0.021293998}
+  m_Size: {x: 0.57, y: 0.003}
   m_EdgeRadius: 0
---- !u!114 &3848664483506043570
+--- !u!114 &8295300541020779441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3350805625045511048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f93bfb6b317ae70a9296b490454ad6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6087632c3dcd97f4ca073da3144f4b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5231613518018132829
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919e87472d79aa5f29277b3a9f831ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: -5906853617401186581, guid: 2063b161d2130774bad36d044f1cec8c, type: 3}
+  _bulletPrefab: {fileID: 2956264704182110467, guid: 2063b161d2130774bad36d044f1cec8c, type: 3}
   _shootForce: 10
   _lifeTime: 2
 --- !u!1 &6961377199577792419
@@ -357,8 +357,8 @@ MonoBehaviour:
   <BulletSpawner>k__BackingField: {fileID: 1741772283908883490}
   <Data>k__BackingField: {fileID: 11400000, guid: 4b0e2fd170171b4b39cda8442e22c56c, type: 2}
   <Animation>k__BackingField: {fileID: 1305463019095521660}
-  <GroundChecker>k__BackingField: {fileID: 3848664483506043570}
-  <EnemyChecker>k__BackingField: {fileID: 665534796681328992}
+  <GroundChecker>k__BackingField: {fileID: 8295300541020779441}
+  <EnemyFinder>k__BackingField: {fileID: 4750902469593696884}
 --- !u!114 &8302043316463000796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a5df7a2e80c633ab8cf961acb58284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 25
+  _maxHealth: 100
 --- !u!114 &1548797896978031129
 MonoBehaviour:
   m_ObjectHideFlags: 0

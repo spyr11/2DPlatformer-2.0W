@@ -20,7 +20,7 @@ public class BulletSpawner : MonoBehaviour
     {
         _pool = new ObjectPool<Bullet>(
                 createFunc: () => Instantiate(_bulletPrefab),
-                actionOnGet: (bullet) => ActionOnGet(bullet),
+                actionOnGet: (bullet) => SetObjectState(bullet),
                 actionOnRelease: (bullet) => bullet.gameObject.SetActive(false),
                 actionOnDestroy: (bullet) => Destroy(bullet.gameObject),
                 collectionCheck: true,
@@ -37,7 +37,7 @@ public class BulletSpawner : MonoBehaviour
         Shoot();
     }
 
-    private void ActionOnGet(Bullet bullet)
+    private void SetObjectState(Bullet bullet)
     {
         bullet.hit += OnHit;
 
@@ -58,4 +58,3 @@ public class BulletSpawner : MonoBehaviour
         _pool.Release(bullet);
     }
 }
-

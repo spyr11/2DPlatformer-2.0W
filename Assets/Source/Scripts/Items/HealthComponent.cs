@@ -1,12 +1,14 @@
 using System;
+using UnityEditor.Sprites;
 using UnityEngine;
 
 [RequireComponent(typeof(IDamagable))]
-public class HealthComponent : MonoBehaviour, IChangeable
+public class HealthComponent : MonoBehaviour
 {
     [SerializeField, Range(0, 200)] private float _maxHealth;
 
-    private IDamagable _character;
+    private IDamagable _damagable;
+    private IHealable _healable;
     private float _currentHealth;
 
     public float CurrentValue => _currentHealth;
@@ -15,36 +17,51 @@ public class HealthComponent : MonoBehaviour, IChangeable
 
     private void Awake()
     {
-        _character = GetComponent<IDamagable>();
+        _damagable = GetComponent<IDamagable>();
 
         _currentHealth = _maxHealth;
     }
 
     private void OnEnable()
     {
-        _character.Damaged += Decrease;
+        _damagable.Damaged += Decrease;
+
+        if (TryGetComponent(out _healable))
+        {
+            _healable.Healed += Increase;
+        }
     }
 
     private void OnDisable()
     {
-        _character.Damaged -= Decrease;
-    }
+        _damagable.Damaged -= Decrease;
 
-    public void OnPicked(float value)
-    {
-        Increase(value);
+        if (_healable != null)
+        {
+            _healable.Healed -= Increase;
+        }
     }
 
     private void Increase(float value)
     {
-        _currentHealth += value;
+        if (value <= 0)
+        {
+            return;
+        }
+
+        _currentHealth = Mathf.Clamp(_currentHealth + value, 0, _maxHealth);
 
         ValueChanged?.Invoke(_currentHealth);
     }
 
     private void Decrease(float value)
     {
-        _currentHealth -= value;
+        if (value <= 0)
+        {
+            return;
+        }
+
+        _currentHealth = Mathf.Clamp(_currentHealth - value, 0, _maxHealth);
 
         ValueChanged?.Invoke(_currentHealth);
     }

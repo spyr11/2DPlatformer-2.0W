@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919e87472d79aa5f29277b3a9f831ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 5830505005089139988, guid: 73a87c9a761b6ea46a121b7fe7732ea7, type: 3}
+  _bulletPrefab: {fileID: 1498651266081345283, guid: 73a87c9a761b6ea46a121b7fe7732ea7, type: 3}
   _shootForce: 3
   _lifeTime: 2
 --- !u!1 &1808520873570933782
@@ -57,9 +57,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1142555787934521307}
   - component: {fileID: 6012041142018398791}
-  - component: {fileID: 1397434051463510757}
+  - component: {fileID: 8699766594501329073}
   m_Layer: 0
-  m_Name: RangeChecker
+  m_Name: RangeFinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6703104, y: 1.7506185}
   m_EdgeRadius: 0
---- !u!114 &1397434051463510757
+--- !u!114 &8699766594501329073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1808520873570933782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08476af079c08ca4c8f4812ce42cc2bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 177e82fa8681e444ca3d59875b5df703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5662514742235258742
@@ -266,9 +266,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1443216625116836748}
   - component: {fileID: 5552903183829625400}
-  - component: {fileID: 6830799841084629637}
+  - component: {fileID: 3147057410935724972}
   m_Layer: 0
-  m_Name: ChaseChecker
+  m_Name: ChaseFinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.5493493, y: 1.8193886}
   m_EdgeRadius: 0
---- !u!114 &6830799841084629637
+--- !u!114 &3147057410935724972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5667839260231040370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08476af079c08ca4c8f4812ce42cc2bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 177e82fa8681e444ca3d59875b5df703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7631933018385686051
@@ -472,9 +472,9 @@ MonoBehaviour:
   <BulletSpawner>k__BackingField: {fileID: 5713552217134867376}
   _patrolPoints: {fileID: 2752478386426463009}
   <Animation>k__BackingField: {fileID: 8118372181287684828}
-  <PlayerChecker>k__BackingField: {fileID: 6830799841084629637}
+  <PlayerFinder>k__BackingField: {fileID: 3147057410935724972}
   <MeleeAttack>k__BackingField: {fileID: 0}
-  <RangeAttack>k__BackingField: {fileID: 1397434051463510757}
+  <RangeAttack>k__BackingField: {fileID: 8699766594501329073}
   <Data>k__BackingField: {fileID: 11400000, guid: 28166ae2b9c24cd73a6e78f926ed8001, type: 2}
 --- !u!114 &4740050655427522023
 MonoBehaviour:

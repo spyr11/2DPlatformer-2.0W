@@ -33,7 +33,7 @@ public class PatrolState : EnemyMovementState
     {
         base.Update();
 
-        if (Enemy.PlayerChecker.IsDetected)
+        if (Enemy.PlayerFinder.IsDetected)
         {
             StateSwitcher.Switch<ChaseState>();
         }
@@ -48,7 +48,9 @@ public class PatrolState : EnemyMovementState
 
         SetDirectionAndSpeed(direction, Data.Speed, Data.Speed);
 
-        if (Mathf.Abs(targetPosition.x - Enemy.Rigidbody2D.position.x) < 0.1f)
+        float minDistance = 0.1f;
+
+        if (Mathf.Abs(targetPosition.x - Enemy.Rigidbody2D.position.x) < minDistance)
         {
             RiseIndex();
         }

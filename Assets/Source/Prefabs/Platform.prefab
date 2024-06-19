@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7982052319148343194}
   - component: {fileID: 6656298185934001434}
   - component: {fileID: 6502429536159375854}
+  - component: {fileID: 6243169150804677611}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -146,8 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1096e65568c2d176bc9e9a6369c7e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeed: 2
-  _path: {fileID: 6473714553672928300}
 --- !u!114 &7982052319148343194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +227,20 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &6243169150804677611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897472018028303652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62011327e62a4445b5b4c93cae94c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 6473714553672928300}
+  _maxSpeed: 3
 --- !u!1 &4869700230453763943
 GameObject:
   m_ObjectHideFlags: 0

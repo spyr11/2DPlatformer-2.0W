@@ -5,9 +5,9 @@ public class Enemy : BaseCharacter
 {
     [SerializeField] private Transform _patrolPoints;
     [field: SerializeField] public EnemyView Animation { get; private set; }
-    [field: SerializeField] public PlayerChecker PlayerChecker { get; private set; }
-    [field: SerializeField] public PlayerChecker MeleeAttack { get; private set; }
-    [field: SerializeField] public PlayerChecker RangeAttack { get; private set; }
+    [field: SerializeField] public PlayerFinder PlayerFinder { get; private set; }
+    [field: SerializeField] public PlayerFinder MeleeAttack { get; private set; }
+    [field: SerializeField] public PlayerFinder RangeAttack { get; private set; }
     [field: SerializeField] public EnemyData Data { get; private set; }
 
 

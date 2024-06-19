@@ -12,8 +12,8 @@ public class EnemyMovementState : IState
     private float _velocityX;
     private float _velocityY;
 
-    protected PlayerChecker MeleeAttack { get; private set; }
-    protected PlayerChecker RangeAttack { get; private set; }
+    protected PlayerFinder MeleeAttack { get; private set; }
+    protected PlayerFinder RangeAttack { get; private set; }
 
     public EnemyMovementState(Enemy enemy)
     {

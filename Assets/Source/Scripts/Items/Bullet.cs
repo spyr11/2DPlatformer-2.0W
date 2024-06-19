@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     private readonly float _maxDamage = 10f;
     private readonly float _maxLifeTime = 2f;
@@ -18,15 +18,13 @@ public abstract class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.TryGetComponent<IDamagable>(out IDamagable enemy) && IsDamageType(enemy))
+        if (collision.transform.TryGetComponent<IDamagable>(out IDamagable character))
         {
-            enemy.TakeDamage(_maxDamage);
+            character.TakeDamage(_maxDamage);
         }
 
         hit?.Invoke(this);
     }
-
-    protected abstract bool IsDamageType(IDamagable character);
 
     private IEnumerator TryDisable(float seconds)
     {

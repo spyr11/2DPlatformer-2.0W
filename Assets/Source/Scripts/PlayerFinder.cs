@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerChecker : MonoBehaviour
+public class PlayerFinder : MonoBehaviour
 {
 
     public IDamagable Player => _player;
@@ -8,9 +8,9 @@ public class PlayerChecker : MonoBehaviour
 
     private IDamagable _player;
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<IDamagable>(out IDamagable player) && player is Player)
+        if (other.TryGetComponent(out IDamagable player) && player is Player)
         {
             _player = player;
         }
@@ -18,7 +18,7 @@ public class PlayerChecker : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.TryGetComponent<IDamagable>(out IDamagable player) && player is Player)
+        if (other.TryGetComponent(out IDamagable player) && player is Player)
         {
             _player = null;
         }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyChecker : MonoBehaviour
+public class EnemyFinder : MonoBehaviour
 {
     private readonly List<IDamagable> _enemies = new List<IDamagable>();
 
@@ -15,14 +15,11 @@ public class EnemyChecker : MonoBehaviour
         _enemies.Capacity = _maxCapacity;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent<IDamagable>(out IDamagable enemy) && enemy is Enemy)
         {
-            if (_enemies.Contains(enemy) == false)
-            {
-                _enemies.Add(enemy);
-            }
+            _enemies.Add(enemy);
         }
     }
 
@@ -30,10 +27,7 @@ public class EnemyChecker : MonoBehaviour
     {
         if (other.TryGetComponent<IDamagable>(out IDamagable enemy) && enemy is Enemy)
         {
-            if (_enemies.Contains(enemy))
-            {
-                _enemies.Remove(enemy);
-            }
+            _enemies.Remove(enemy);
         }
     }
 }

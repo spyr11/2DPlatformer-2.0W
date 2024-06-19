@@ -8,7 +8,7 @@ public class TopDownAttackState : CombatState
     {
         base.Update();
 
-        AttackEnemies(Player.EnemyChecker.Enemies);
+        AttackEnemies(Player.EnemyFinder.Enemies);
 
         StateSwitcher.Switch<JumpState>();
     }
