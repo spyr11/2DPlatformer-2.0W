@@ -17,7 +17,7 @@ public class EnemyFinder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<IDamagable>(out IDamagable enemy) && enemy is Enemy)
+        if (other.TryGetComponent(out IDamagable enemy) && enemy is Enemy)
         {
             _enemies.Add(enemy);
         }
@@ -25,7 +25,7 @@ public class EnemyFinder : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.TryGetComponent<IDamagable>(out IDamagable enemy) && enemy is Enemy)
+        if (other.TryGetComponent(out IDamagable enemy) && enemy is Enemy)
         {
             _enemies.Remove(enemy);
         }
