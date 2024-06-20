@@ -7,9 +7,7 @@ public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private float _shootForce;
-    [SerializeField] private float _lifeTime;
 
-    private Dictionary<Bullet, Coroutine> _coroutines;
     private ObjectPool<Bullet> _pool;
     private Vector2 _direction;
 
@@ -18,8 +16,6 @@ public class BulletSpawner : MonoBehaviour
 
     private void Awake()
     {
-        _coroutines = new Dictionary<Bullet, Coroutine>();
-
         _pool = new ObjectPool<Bullet>(
                 createFunc: () => CreateObject(),
                 actionOnGet: (bullet) => SetObjectState(bullet),
@@ -42,19 +38,16 @@ public class BulletSpawner : MonoBehaviour
     private Bullet CreateObject()
     {
         Bullet bullet = Instantiate(_bulletPrefab);
-        bullet.Hit += OnHit;
-
-        Coroutine coroutine = null;
-        _coroutines.Add(bullet, coroutine);
+        bullet.Hit += ReleaseObject;
+        bullet.Disabled += ReleaseObject;
 
         return bullet;
     }
 
     private void DestroyObject(Bullet bullet)
     {
-        bullet.Hit -= OnHit;
-
-        _coroutines.Remove(bullet);
+        bullet.Hit -= ReleaseObject;
+        bullet.Disabled -= ReleaseObject;
 
         Destroy(bullet.gameObject);
     }
@@ -64,8 +57,6 @@ public class BulletSpawner : MonoBehaviour
         bullet.transform.position = transform.position;
         bullet.gameObject.SetActive(true);
         bullet.Rigidbody2D.velocity = _direction * _shootForce;
-
-        _coroutines[bullet] = StartCoroutine(TryRelease(bullet));
     }
 
     private void Shoot()
@@ -73,20 +64,8 @@ public class BulletSpawner : MonoBehaviour
         _pool.Get();
     }
 
-    private void OnHit(Bullet bullet)
+    private void ReleaseObject(Bullet bullet)
     {
-        _pool.Release(bullet);
-
-        if (_coroutines[bullet] != null)
-        {
-            StopCoroutine(_coroutines[bullet]);
-        }
-    }
-
-    private IEnumerator TryRelease(Bullet bullet)
-    {
-        yield return new WaitForSeconds(_lifeTime);
-
         _pool.Release(bullet);
     }
 }
