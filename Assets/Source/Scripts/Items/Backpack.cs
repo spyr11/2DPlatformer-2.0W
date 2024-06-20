@@ -27,6 +27,11 @@ public class Backpack : MonoBehaviour
 
     private void OnPicked(float value)
     {
+        if (value <= 0)
+        {
+            return;
+        }
+
         _coinsCount += value;
 
         ValueChanged?.Invoke(_coinsCount);

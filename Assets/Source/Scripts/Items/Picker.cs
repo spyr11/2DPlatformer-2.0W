@@ -10,7 +10,7 @@ public class Picker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Item item) && _isPicked == false)
+        if (collision.TryGetComponent(out Item item) && item.IsPicked == false)
         {
             _isPicked = true;
 
@@ -19,12 +19,13 @@ public class Picker : MonoBehaviour
                 HealPicked?.Invoke(item.GetValue());
             }
 
-            if (item is Coin)
+            else if (item is Coin)
             {
                 CoinPicked?.Invoke(item.GetValue());
             }
 
             item.gameObject.SetActive(false);
+
             Destroy(item.gameObject);
         }
 

@@ -17,10 +17,10 @@ public class BulletSpawner : MonoBehaviour
     private void Awake()
     {
         _pool = new ObjectPool<Bullet>(
-                createFunc: () => CreateObject(),
-                actionOnGet: (bullet) => SetObjectState(bullet),
+                createFunc: CreateObject,
+                actionOnGet: SetObjectState,
                 actionOnRelease: (bullet) => bullet.gameObject.SetActive(false),
-                actionOnDestroy: (bullet) => DestroyObject(bullet),
+                actionOnDestroy: DestroyObject,
                 collectionCheck: true,
                 defaultCapacity: _poolMaxCapacity,
                 maxSize: _poolMaxSize);

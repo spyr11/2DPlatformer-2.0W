@@ -4485,7 +4485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1828964090640809836, guid: 86cf39272ce4c8946801a5a75004033b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.673
       objectReference: {fileID: 0}
     - target: {fileID: 1828964090640809836, guid: 86cf39272ce4c8946801a5a75004033b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5813,7 +5813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1828964090640809836, guid: 86cf39272ce4c8946801a5a75004033b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.673
       objectReference: {fileID: 0}
     - target: {fileID: 1828964090640809836, guid: 86cf39272ce4c8946801a5a75004033b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6409,6 +6409,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1779756388221593188, guid: f737d4b3190d0924cb9af482933be616, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1779756388221593188, guid: f737d4b3190d0924cb9af482933be616, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3710775516867374501, guid: f737d4b3190d0924cb9af482933be616, type: 3}
       propertyPath: m_Name
       value: Medicine
@@ -6419,7 +6427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7762829970802743028, guid: f737d4b3190d0924cb9af482933be616, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.673
       objectReference: {fileID: 0}
     - target: {fileID: 7762829970802743028, guid: f737d4b3190d0924cb9af482933be616, type: 3}
       propertyPath: m_LocalPosition.z
