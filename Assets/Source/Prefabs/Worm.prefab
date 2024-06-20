@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2366377711343831632}
   - component: {fileID: 5713552217134867376}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 8420341464377329118}
   - component: {fileID: 9185082521207979056}
   - component: {fileID: 4740050655427522023}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WormModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1570855916794165457}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Worm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,6 +550,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrolPointsWorm
       objectReference: {fileID: 0}
+    - target: {fileID: 5653127006242784194, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718271676023758443, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6785404959663831970, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -588,6 +596,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6785404959663831970, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225409436573780480, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

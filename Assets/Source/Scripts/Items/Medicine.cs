@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class Medicine : Item
 {
     private float _healValue = 50f;

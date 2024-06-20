@@ -13,7 +13,7 @@ public class TopDownAttackState : CombatState
         StateSwitcher.Switch<JumpState>();
     }
 
-    private void AttackEnemies(List<IDamagable> enemies)
+    private void AttackEnemies(IReadOnlyList<IDamagable> enemies)
     {
         int count = enemies.Count;
 

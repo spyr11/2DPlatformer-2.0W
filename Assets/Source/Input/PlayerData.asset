@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TopDownAttackValue>k__BackingField: 10
   <RangeAttackValue>k__BackingField: 10
-  <RangeAttackChargeTime>k__BackingField: 0.3
+  <RangeAttackChargeTime>k__BackingField: 0.05
   <JumpForce>k__BackingField: 12
   <Speed>k__BackingField: 5
   <SpeedOnAir>k__BackingField: 2.5

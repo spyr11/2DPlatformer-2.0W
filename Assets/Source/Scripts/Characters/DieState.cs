@@ -16,11 +16,10 @@ public class DieState : IState
 
     public void Enter()
     {
-
         _character.Rigidbody2D.gravityScale = _character.Rigidbody2D.gravityScale > 0 ? 0 : 1;
         _character.Rigidbody2D.velocity = Vector2.zero;
 
-        if (_character.TryGetComponent<Collider2D>(out Collider2D collider2D))
+        if (_character.TryGetComponent(out Collider2D collider2D))
         {
             collider2D.enabled = false;
         }

@@ -2,7 +2,6 @@
 
 public class PlayerFinder : MonoBehaviour
 {
-
     public IDamagable Player => _player;
     public bool IsDetected => _player != null;
 

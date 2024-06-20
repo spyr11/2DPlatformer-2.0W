@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 5398501908059410341}
   - component: {fileID: 4621099275731732081}
   - component: {fileID: 5841756879830523918}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TrashModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3318276928200468330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,6 +502,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrolPointsTrash
       objectReference: {fileID: 0}
+    - target: {fileID: 5653127006242784194, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718271676023758443, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6785404959663831970, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -540,6 +548,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6785404959663831970, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225409436573780480, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class EnemyFinder : MonoBehaviour
 {
-    private readonly List<IDamagable> _enemies = new List<IDamagable>();
+    private List<IDamagable> _enemies = new List<IDamagable>();
 
     private int _maxCapacity = 10;
 
-    public List<IDamagable> Enemies => _enemies;
+    public IReadOnlyList<IDamagable> Enemies => _enemies;
     public bool HasEnemy => _enemies.Count > 0;
 
     private void Awake()

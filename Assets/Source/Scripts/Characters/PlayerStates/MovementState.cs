@@ -70,9 +70,9 @@ public class MovementState : IState
 
     private void SetStateOnPlatform()
     {
-        if (Player.GroundChecker.IsGrounded && Player.GroundChecker.Box != null)
+        if (Player.GroundChecker.IsGrounded && Player.GroundChecker.Platform != null)
         {
-            Player.gameObject.transform.SetParent(Player.GroundChecker.Box.transform);
+            Player.gameObject.transform.SetParent(Player.GroundChecker.Platform.transform);
         }
         else
         {

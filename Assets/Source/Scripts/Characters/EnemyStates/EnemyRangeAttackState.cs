@@ -20,8 +20,6 @@ public class EnemyRangeAttackState : EnemyMovementState
         Vector2 direction = (player.GetPosition() - Enemy.transform.position).normalized;
 
         Attack(direction);
-
-        Enemy.Animation.StartAttackRange();
     }
 
     public override void Update()
@@ -35,7 +33,15 @@ public class EnemyRangeAttackState : EnemyMovementState
                 StateSwitcher.Switch<EnemyMeleeAttackState>();
             }
 
-            StateSwitcher.Switch<PatrolState>();
+            if (Enemy.PlayerFinder.IsDetected)
+            {
+                StateSwitcher.Switch<ChaseState>();
+
+            }
+            else
+            {
+                StateSwitcher.Switch<PatrolState>();
+            }
         }
     }
 

@@ -6,7 +6,6 @@ public class PointMover : MonoBehaviour
     [SerializeField] private float _maxSpeed;
 
     private Transform[] _points;
-
     private int _currentIndex;
 
     private void Start()

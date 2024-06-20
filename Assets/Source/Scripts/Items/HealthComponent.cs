@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Sprites;
 using UnityEngine;
 
 [RequireComponent(typeof(IDamagable))]
@@ -11,9 +10,9 @@ public class HealthComponent : MonoBehaviour
     private IHealable _healable;
     private float _currentHealth;
 
-    public float CurrentValue => _currentHealth;
-
     public event Action<float> ValueChanged;
+
+    public float CurrentValue => _currentHealth;
 
     private void Awake()
     {

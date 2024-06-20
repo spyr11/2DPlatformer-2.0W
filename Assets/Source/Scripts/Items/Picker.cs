@@ -10,7 +10,7 @@ public class Picker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Item>(out Item item) && _isPicked == false)
+        if (collision.gameObject.TryGetComponent(out Item item) && _isPicked == false)
         {
             _isPicked = true;
 

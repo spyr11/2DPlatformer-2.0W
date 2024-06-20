@@ -10,7 +10,6 @@ public class Enemy : BaseCharacter
     [field: SerializeField] public PlayerFinder RangeAttack { get; private set; }
     [field: SerializeField] public EnemyData Data { get; private set; }
 
-
     private StateContext _stateContext;
     private Vector2[] _points;
 
