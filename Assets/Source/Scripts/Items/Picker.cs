@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class Picker : MonoBehaviour
 {
-    private bool _isPicked;
-
     public event Action<float> HealPicked;
     public event Action<float> CoinPicked;
 
@@ -12,8 +10,6 @@ public class Picker : MonoBehaviour
     {
         if (collision.TryGetComponent(out Item item) && item.IsPicked == false)
         {
-            _isPicked = true;
-
             if (item is Medicine)
             {
                 HealPicked?.Invoke(item.GetValue());
@@ -27,11 +23,6 @@ public class Picker : MonoBehaviour
             item.gameObject.SetActive(false);
 
             Destroy(item.gameObject);
-        }
-
-        if (item == null)
-        {
-            _isPicked = false;
         }
     }
 }

@@ -9,7 +9,7 @@ public class MovementState : IState
     private readonly Quaternion _turnRight = Quaternion.Euler(0, 0, 0);
     private readonly Quaternion _turnLeft = Quaternion.Euler(0, 180, 0);
 
-    public float VelocityX { get; protected set; }
+    protected float VelocityX { get; set; }
 
     public MovementState(Player player)
     {

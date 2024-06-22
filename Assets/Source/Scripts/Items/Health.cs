@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(IDamagable))]
-public class HealthComponent : MonoBehaviour
+public class Health : MonoBehaviour, IIndicator
 {
     [SerializeField, Range(0, 200)] private float _maxHealth;
 
@@ -10,9 +10,10 @@ public class HealthComponent : MonoBehaviour
     private IHealable _healable;
     private float _currentHealth;
 
-    public event Action<float> ValueChanged;
+    public event Action<float> Changed;
 
     public float CurrentValue => _currentHealth;
+    public float MaxValue => _maxHealth;
 
     private void Awake()
     {
@@ -23,6 +24,8 @@ public class HealthComponent : MonoBehaviour
 
     private void OnEnable()
     {
+        Changed?.Invoke(_currentHealth);
+
         _damagable.Damaged += Decrease;
 
         if (TryGetComponent(out _healable))
@@ -50,7 +53,7 @@ public class HealthComponent : MonoBehaviour
 
         _currentHealth = Mathf.Clamp(_currentHealth + value, 0, _maxHealth);
 
-        ValueChanged?.Invoke(_currentHealth);
+        Changed?.Invoke(_currentHealth);
     }
 
     private void Decrease(float value)
@@ -62,6 +65,6 @@ public class HealthComponent : MonoBehaviour
 
         _currentHealth = Mathf.Clamp(_currentHealth - value, 0, _maxHealth);
 
-        ValueChanged?.Invoke(_currentHealth);
+        Changed?.Invoke(_currentHealth);
     }
 }

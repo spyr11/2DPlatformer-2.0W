@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-class FollowCamera : MonoBehaviour
+class CameraMover : MonoBehaviour
 {
     [SerializeField] private Transform _target;
     [SerializeField] private BoxCollider2D _mapBounds;
