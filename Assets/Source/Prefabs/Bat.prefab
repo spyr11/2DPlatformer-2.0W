@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6997429607240524565}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!58 &3242484908522986074
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463e553a82bd4fd4ea7db6115b995bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 30
+  _maxHealth: 10
 --- !u!114 &7254216851634551766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 1747966085221507824}
   - component: {fileID: 6663928472971453601}
   - component: {fileID: 5362388499832939513}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MeleeFinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 8764276870304666394}
   - component: {fileID: 5193971171108441369}
   - component: {fileID: 6790866923957568535}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ChaseFinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 8747315292967053320}
   - component: {fileID: 7140343305007371243}
   - component: {fileID: 4743063738023979917}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 941174065, guid: 3ba6ffa8ea318864fa1594847d3a8f86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -499,13 +499,13 @@ GameObject:
   - component: {fileID: 5498475893101066016}
   - component: {fileID: 4017500270208719258}
   - component: {fileID: 6824476675812380380}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RangeFinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5498475893101066016
 Transform:
   m_ObjectHideFlags: 0
@@ -578,7 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6468414000090395048}
   - component: {fileID: 5330156785791453314}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,11 +628,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5653127006242784194, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5718271676023758443, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6785404959663831970, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -676,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7225409436573780480, guid: 74172e8b2f3c39b589a95bf72e4b1bb6, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -699,9 +699,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3198453246311336320}
     m_Modifications:
+    - target: {fileID: 3266380138720112128, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713296007057412544, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3887351428371161726, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
       propertyPath: m_Name
       value: CanvasHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887351428371161726, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8482970723992396138, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
       propertyPath: m_Pivot.x
@@ -769,7 +781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8482970723992396138, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.6011
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8482970723992396138, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -790,6 +802,14 @@ PrefabInstance:
     - target: {fileID: 8629167702220582263, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721700386954760947, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184901354925312929, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9223304806405458893, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
       propertyPath: _indicator

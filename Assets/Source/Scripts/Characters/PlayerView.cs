@@ -13,6 +13,9 @@ public class PlayerView : MonoBehaviour
     public void StartFalling() => _animator.SetBool(PlayerAnimatorData.Params.IsFalling, true);
     public void StopFalling() => _animator.SetBool(PlayerAnimatorData.Params.IsFalling, false);
 
+    public void StartHealing() => _animator.SetBool(PlayerAnimatorData.Params.IsStealing, true);
+    public void StopHealing() => _animator.SetBool(PlayerAnimatorData.Params.IsStealing, false);
+
     public void StartDie() => _animator.SetBool(PlayerAnimatorData.Params.IsDying, true);
 
     public void TakeDamage() => _animator.SetTrigger(PlayerAnimatorData.Params.TakeDamage);

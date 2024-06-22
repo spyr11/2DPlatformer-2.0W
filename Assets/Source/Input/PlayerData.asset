@@ -17,3 +17,5 @@ MonoBehaviour:
   <JumpForce>k__BackingField: 12
   <Speed>k__BackingField: 5
   <SpeedOnAir>k__BackingField: 2.5
+  <vampirismValue>k__BackingField: 6
+  <vampirismTime>k__BackingField: 6

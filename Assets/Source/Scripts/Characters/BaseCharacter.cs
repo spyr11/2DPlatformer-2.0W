@@ -6,22 +6,23 @@ public abstract class BaseCharacter : MonoBehaviour, IDamagable
 {
     [field: SerializeField] public BulletSpawner BulletSpawner { get; private set; }
 
-    private Health _healthComponent;
     private Rigidbody2D _rigidbody2D;
-
-    public abstract StateContext StateContext { get; }
-
-    public Health HealthComponent => _healthComponent;
-    public Rigidbody2D Rigidbody2D => _rigidbody2D;
+    private Health _health;
 
     public event Action<float> Damaged;
 
+    public abstract StateContext StateContext { get; }
+
+    public float CurrentHealth => _health.CurrentValue;
+    public Rigidbody2D Rigidbody2D => _rigidbody2D;
+
     private void Awake()
     {
-        Init();
-
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _healthComponent = GetComponent<Health>();
+
+        _health = GetComponent<Health>();
+
+        Init();
     }
 
     private void OnEnable()

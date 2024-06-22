@@ -1,5 +1,5 @@
 {
-    "name": "NewControls",
+    "name": "PlayerInput",
     "maps": [
         {
             "name": "Action",
@@ -27,6 +27,15 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "638e432c-8053-4dd8-a4f1-b330496d1db6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Vampirism",
+                    "type": "Button",
+                    "id": "5ff31a81-4da4-4c18-b103-375ee1cf0667",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -86,6 +95,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ebb806d-0558-4557-9d97-992eb69feea2",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vampirism",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

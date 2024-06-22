@@ -53,6 +53,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Vampirism"",
+                    ""type"": ""Button"",
+                    ""id"": ""5ff31a81-4da4-4c18-b103-375ee1cf0667"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -110,6 +119,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ebb806d-0558-4557-9d97-992eb69feea2"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vampirism"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -121,6 +141,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Action_Jump = m_Action.FindAction("Jump", throwIfNotFound: true);
         m_Action_Move = m_Action.FindAction("Move", throwIfNotFound: true);
         m_Action_Attack = m_Action.FindAction("Attack", throwIfNotFound: true);
+        m_Action_Vampirism = m_Action.FindAction("Vampirism", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,6 +206,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Action_Jump;
     private readonly InputAction m_Action_Move;
     private readonly InputAction m_Action_Attack;
+    private readonly InputAction m_Action_Vampirism;
     public struct ActionActions
     {
         private @PlayerInput m_Wrapper;
@@ -192,6 +214,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Action_Jump;
         public InputAction @Move => m_Wrapper.m_Action_Move;
         public InputAction @Attack => m_Wrapper.m_Action_Attack;
+        public InputAction @Vampirism => m_Wrapper.m_Action_Vampirism;
         public InputActionMap Get() { return m_Wrapper.m_Action; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -210,6 +233,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
+            @Vampirism.started += instance.OnVampirism;
+            @Vampirism.performed += instance.OnVampirism;
+            @Vampirism.canceled += instance.OnVampirism;
         }
 
         private void UnregisterCallbacks(IActionActions instance)
@@ -223,6 +249,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
+            @Vampirism.started -= instance.OnVampirism;
+            @Vampirism.performed -= instance.OnVampirism;
+            @Vampirism.canceled -= instance.OnVampirism;
         }
 
         public void RemoveCallbacks(IActionActions instance)
@@ -245,5 +274,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnVampirism(InputAction.CallbackContext context);
     }
 }

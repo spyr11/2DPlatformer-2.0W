@@ -40,7 +40,7 @@ public class EnemyMovementState : IState
 
     public virtual void Update()
     {
-        if (Enemy.HealthComponent.CurrentValue <= 0)
+        if (Enemy.CurrentHealth <= 0)
         {
             Enemy.Animation.StartDie();
 

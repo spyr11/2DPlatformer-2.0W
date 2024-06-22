@@ -9,6 +9,8 @@ public class Player : BaseCharacter, IHealable
     [field: SerializeField] public PlayerView Animation { get; private set; }
     [field: SerializeField] public GroundDetector GroundChecker { get; private set; }
     [field: SerializeField] public EnemyFinder EnemyFinder { get; private set; }
+    [field: SerializeField] public EnemyFinder VampireVictimFinder { get; private set; }
+    [field: SerializeField] public VampirismLightning VampirismLightning { get; private set; }
 
     private StateContext _stateContext;
     private PlayerInput _playerInput;
@@ -19,9 +21,12 @@ public class Player : BaseCharacter, IHealable
     public override StateContext StateContext => _stateContext;
 
     public bool AttackPressed => _playerInput.Action.Attack.IsPressed();
+    public bool VampirismPressed => _playerInput.Action.Vampirism.IsPressed();
     public bool JumpPressed => _playerInput.Action.Jump.IsPressed();
 
     public float ReadHorizontal() => _playerInput.Action.Move.ReadValue<float>();
+
+    public void Heal(float value) => Healed?.Invoke(value);
 
     protected override void Init()
     {
@@ -49,6 +54,7 @@ public class Player : BaseCharacter, IHealable
                                     new RangeAttackState(this),
                                     new DamagedState(this),
                                     new DieState(this),
+                                    new VampireState(this),
                                     };
 
         states.TrimExcess();
@@ -63,10 +69,5 @@ public class Player : BaseCharacter, IHealable
         _playerInput.Disable();
 
         _picker.HealPicked -= Heal;
-    }
-
-    private void Heal(float value)
-    {
-        Healed?.Invoke(value);
     }
 }

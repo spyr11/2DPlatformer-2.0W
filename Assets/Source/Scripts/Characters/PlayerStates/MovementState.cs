@@ -20,6 +20,8 @@ public class MovementState : IState
 
     public virtual void Enter()
     {
+        Player.VampirismLightning.Disable();
+
         Player.Damaged += OnDamaged;
     }
 
@@ -30,7 +32,7 @@ public class MovementState : IState
 
     public virtual void Update()
     {
-        if (Player.HealthComponent.CurrentValue <= 0)
+        if (Player.CurrentHealth <= 0)
         {
             Player.Animation.StartDie();
 
@@ -40,6 +42,11 @@ public class MovementState : IState
         if (Player.AttackPressed && Data.RangeCooldown.IsPassed)
         {
             StateSwitcher.Switch<RangeAttackState>();
+        }
+
+        if (Player.VampirismPressed)
+        {
+            StateSwitcher.Switch<VampireState>();
         }
 
         SetStateOnPlatform();

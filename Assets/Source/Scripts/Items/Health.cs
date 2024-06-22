@@ -24,14 +24,14 @@ public class Health : MonoBehaviour, IIndicator
 
     private void OnEnable()
     {
-        Changed?.Invoke(_currentHealth);
-
         _damagable.Damaged += Decrease;
 
         if (TryGetComponent(out _healable))
         {
             _healable.Healed += Increase;
         }
+
+        Changed?.Invoke(_maxHealth);
     }
 
     private void OnDisable()

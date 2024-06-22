@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 632369180892923589}
   - component: {fileID: 5167273298527063909}
   - component: {fileID: 8295300541020779441}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2052
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -166,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.57, y: 0.003}
+  m_Size: {x: 0.57, y: 0.02}
   m_EdgeRadius: 0
 --- !u!114 &8295300541020779441
 MonoBehaviour:
@@ -268,6 +268,7 @@ Transform:
   - {fileID: 1265895450708155072}
   - {fileID: 2723256412278656310}
   - {fileID: 8688595125169816385}
+  - {fileID: 2840246487977415502}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3884426903295663049
@@ -354,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463e553a82bd4fd4ea7db6115b995bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 200
+  _maxHealth: 100
 --- !u!114 &7507444674228073784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +373,8 @@ MonoBehaviour:
   <Animation>k__BackingField: {fileID: 1305463019095521660}
   <GroundChecker>k__BackingField: {fileID: 8295300541020779441}
   <EnemyFinder>k__BackingField: {fileID: 4750902469593696884}
+  <VampireVictimFinder>k__BackingField: {fileID: 0}
+  <VampirismLightning>k__BackingField: {fileID: 0}
 --- !u!114 &1548797896978031129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,7 +473,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: -449805904, guid: 342eecd3817b4db4b91aa700876d2392, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -513,6 +516,86 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cce043e2dc8ec74abe9b70d80a58c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7876343575373799441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2840246487977415502}
+  - component: {fileID: 8072634317311222109}
+  - component: {fileID: 7441914156309920122}
+  m_Layer: 10
+  m_Name: Vampirism
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2840246487977415502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7876343575373799441}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2126443460254777799}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &8072634317311222109
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7876343575373799441}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!114 &7441914156309920122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7876343575373799441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd125b950af1a840a1777abb0882a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8111993483530431440
@@ -661,6 +744,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 4054587519781405111, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054587519781405111, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.044874907
+      objectReference: {fileID: 0}
     - target: {fileID: 8482970723992396138, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -727,7 +818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8482970723992396138, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.538
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8482970723992396138, guid: 9395708f865d5a54f9db0b6b5b478bc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dabe9b5b7347924d8cb1b164482e4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _indicator: {fileID: 0}
+  _indicator: {fileID: 8215469873804832828, guid: 1226f65370014d3ac915ecacede2007f, type: 3}
   _slider: {fileID: 4567882930359723280}
   _isSmooth: 0
 --- !u!1 &8721700386954760947
