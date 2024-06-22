@@ -18,7 +18,7 @@ public class Cooldown
     {
         if (IsPassed)
         {
-            Task task = PassTime();
+            PassTime();
         }
     }
 

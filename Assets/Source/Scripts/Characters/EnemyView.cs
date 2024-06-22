@@ -13,9 +13,11 @@ public class EnemyView : MonoBehaviour
     public void Init() => _animator = GetComponent<Animator>();
 
     public void StartPatrolling() => _animator.SetBool(IsPatrolling, true);
+
     public void StopPatrolling() => _animator.SetBool(IsPatrolling, false);
 
     public void StartChasing() => _animator.SetBool(IsChasing, true);
+
     public void StopChasing() => _animator.SetBool(IsChasing, false);
 
     public void StartDie() => _animator.SetBool(PlayerAnimatorData.Params.IsDying, true);

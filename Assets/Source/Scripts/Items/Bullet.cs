@@ -54,7 +54,6 @@ public class Bullet : MonoBehaviour
         }
     }
 
-
     private IEnumerator TryDisable()
     {
         yield return new WaitForSeconds(_lifeTime);

@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3168975647883701453, guid: d1f7b41ff93b07a4ea41be22091caa0c, type: 3}
       propertyPath: m_Constraints
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4001198882060923950, guid: d1f7b41ff93b07a4ea41be22091caa0c, type: 3}
       propertyPath: m_Maskable
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7993680531631920455, guid: d1f7b41ff93b07a4ea41be22091caa0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6523,7 +6523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3168975647883701453, guid: d1f7b41ff93b07a4ea41be22091caa0c, type: 3}
       propertyPath: m_Constraints
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3741319631190217004, guid: d1f7b41ff93b07a4ea41be22091caa0c, type: 3}
       propertyPath: m_Layer
@@ -6623,7 +6623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7993680531631920455, guid: d1f7b41ff93b07a4ea41be22091caa0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8748846047219028511, guid: d1f7b41ff93b07a4ea41be22091caa0c, type: 3}
       propertyPath: m_Layer

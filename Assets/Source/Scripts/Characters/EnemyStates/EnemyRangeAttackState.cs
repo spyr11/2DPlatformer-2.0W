@@ -50,5 +50,3 @@ public class EnemyRangeAttackState : EnemyMovementState
         _bulletSpawner.SetDirection(direction);
     }
 }
-
-

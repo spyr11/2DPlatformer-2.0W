@@ -66,5 +66,3 @@ public class PatrolState : EnemyMovementState
         }
     }
 }
-
-
